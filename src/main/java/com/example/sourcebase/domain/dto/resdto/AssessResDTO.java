@@ -21,4 +21,5 @@ public class AssessResDTO {
     String assessmentType;
     String totalPoint;
     List<AssessDetailResDto> assessDetails;
+
 }

@@ -2,6 +2,7 @@ package com.example.sourcebase.controller;
 
 import com.example.sourcebase.domain.dto.reqdto.AssessReqDTO;
 import com.example.sourcebase.service.IAssessService;
+import com.example.sourcebase.service.IRatedRankService;
 import com.example.sourcebase.util.ErrorCode;
 import com.example.sourcebase.util.ResponseData;
 import com.example.sourcebase.util.SuccessCode;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @Transactional
 public class AssessRestController {
     IAssessService assessService;
+
     @PostMapping("/save-assess")
     @CrossOrigin
     public ResponseEntity<ResponseData<?>> saveAssess(@RequestBody AssessReqDTO assessReqDto) {

@@ -11,4 +11,6 @@ public interface IAssessDetailRepository extends JpaRepository<AssessDetail, Lon
 
     @Query("SELECT ad FROM AssessDetail ad WHERE ad.assess.id = :assessId")
     List<AssessDetail> findByAssessId(Long assessId);
+
+
 }

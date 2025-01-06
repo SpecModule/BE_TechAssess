@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 public interface IAssessRepository extends JpaRepository<Assess, Long> {
 
@@ -22,5 +21,6 @@ public interface IAssessRepository extends JpaRepository<Assess, Long> {
     @Query("SELECT a FROM Assess a WHERE a.toUser.id = :userId AND a.assessmentType = 'SELF'")
     Assess getAssessBySelf(Long userId);
 
-
+    @Query("SELECT a FROM Assess a WHERE a.toUser.id = :userId AND a.assessmentType = 'TEAM'")
+    List<Assess> getListAssessTeamOfUserId(Long userId);
 }
